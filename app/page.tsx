@@ -4,7 +4,8 @@ import Image from 'next/image'
 import { motion } from 'motion/react'
 import { ArrowUpRight, Check, Globe2, Heart, Instagram, MessageCircle, ShieldCheck, Sparkles, Stethoscope } from 'lucide-react'
 
-const whatsappUrl = 'https://wa.me/5500000000000?text=Ol%C3%A1%2C%20Ana%20J%C3%BAlia!%20Gostaria%20de%20saber%20mais%20sobre%20a%20emiss%C3%A3o%20do%20CVI.'
+const whatsappNumero = process.env.NEXT_PUBLIC_NUMERO_WHATSAPP
+const whatsappUrl = `https://wa.me/${whatsappNumero}?text=Ol%C3%A1%2C%20Ana%20J%C3%BAlia!%20Gostaria%20de%20saber%20mais%20sobre%20a%20emiss%C3%A3o%20do%20CVI.`
 
 const reveal = {
   hidden: { opacity: 0, y: 28 },
