@@ -18,7 +18,7 @@ export default function Page() {
       <header className="absolute inset-x-0 top-0 z-20">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-10">
           <a href="#inicio" aria-label="Petmove início" className="h-16 w-32 overflow-hidden sm:h-[76px] sm:w-40">
-            <Image src="/petmove-logo.jpeg" alt="Petmove — consultoria de viagem pet" width={500} height={500} className="h-full w-full scale-[1.9] object-contain mix-blend-multiply" priority />
+            <Image src="/petmove-logo.svg" alt="Petmove — consultoria de viagem pet" width={500} height={500} className="h-full w-full scale-[1.9] object-contain mix-blend-multiply" priority />
           </a>
           <nav className="hidden items-center gap-8 text-sm font-medium text-[#315447] md:flex" aria-label="Navegação principal">
             <a href="#como-funciona" className="transition-colors hover:text-[#d27c61]">Como funciona</a>
