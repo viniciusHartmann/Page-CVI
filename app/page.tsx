@@ -1,15 +1,14 @@
 'use client'
-
 import Image from 'next/image'
 import { motion } from 'motion/react'
-import { ArrowUpRight, Check, Globe2, Heart, Instagram, MessageCircle, ShieldCheck, Sparkles, Stethoscope } from 'lucide-react'
+import { ArrowUpRight, Check, Dog, Globe2, Heart, MessageCircle, ShieldCheck, Sparkles, Stethoscope, User } from 'lucide-react'
 
 const whatsappNumero = process.env.NEXT_PUBLIC_NUMERO_WHATSAPP
 const whatsappUrl = `https://wa.me/${whatsappNumero}?text=Ol%C3%A1%2C%20Ana%20J%C3%BAlia!%20Gostaria%20de%20saber%20mais%20sobre%20a%20emiss%C3%A3o%20do%20CVI.`
 
 const reveal = {
   hidden: { opacity: 0, y: 28 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const } },
 }
 
 export default function Page() {
@@ -17,8 +16,8 @@ export default function Page() {
     <main className="min-h-screen overflow-hidden bg-[#f7f3ec] text-[#173c32]">
       <header className="absolute inset-x-0 top-0 z-20">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-10">
-          <a href="#inicio" aria-label="Petmove início" className="h-16 w-32 overflow-hidden sm:h-[76px] sm:w-40">
-            <Image src="/petmove-logo.svg" alt="Petmove — consultoria de viagem pet" width={500} height={500} className="h-full w-full scale-[1.9] object-contain mix-blend-multiply" priority />
+          <a href="#inicio" aria-label="Petmove início" className="h-16 w-32 sm:h-[76px] sm:w-40">
+            <Image src="/petmove-logo.svg" alt="Petmove — consultoria de viagem pet" width={500} height={500} className="h-full w-full object-contain mix-blend-multiply" priority />
           </a>
           <nav className="hidden items-center gap-8 text-sm font-medium text-[#315447] md:flex" aria-label="Navegação principal">
             <a href="#como-funciona" className="transition-colors hover:text-[#d27c61]">Como funciona</a>
@@ -35,7 +34,7 @@ export default function Page() {
         <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-14 lg:grid-cols-[1.02fr_.98fr] lg:gap-8">
           <motion.div initial="hidden" animate="visible" variants={reveal} className="max-w-2xl">
             <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#173c32]/15 bg-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#6b806d]">
-              <Sparkles className="size-3.5" /> viagens sem sustos
+              <Sparkles className="size-3.5" /> Sua viagem mais tranquila
             </div>
             <h1 className="font-serif text-5xl leading-[.98] tracking-[-.045em] text-[#173c32] sm:text-7xl lg:text-[92px]">Seu pet pronto para <em className="font-normal text-[#d27c61]">viajar.</em></h1>
             <p className="mt-8 max-w-lg text-lg leading-relaxed text-[#587064] sm:text-xl">Cuidamos de toda a documentação para que você e seu melhor amigo possam cruzar fronteiras com tranquilidade, segurança e carinho.</p>
@@ -43,7 +42,7 @@ export default function Page() {
               <a href={whatsappUrl} target="_blank" rel="noreferrer" className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#d27c61] px-6 py-4 font-semibold text-white shadow-[0_12px_30px_-12px_#d27c61] transition hover:-translate-y-1 hover:bg-[#c06e55]">Quero emitir meu CVI <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" /></a>
               <a href="#como-funciona" className="inline-flex items-center justify-center rounded-full border border-[#173c32]/20 px-6 py-4 font-semibold text-[#315447] transition hover:bg-white/60">Entenda o processo</a>
             </div>
-            <div className="mt-12 flex items-center gap-5 text-sm text-[#6b806d]"><div className="flex -space-x-2"><span className="size-9 rounded-full border-2 border-[#f7f3ec] bg-[#d9b5a2]" /><span className="size-9 rounded-full border-2 border-[#f7f3ec] bg-[#9db5a1]" /><span className="size-9 rounded-full border-2 border-[#f7f3ec] bg-[#e5c69f]" /></div><span>Mais tranquilidade para<br /><strong className="text-[#315447]">tutores e seus pets</strong></span></div>
+            <div className="mt-12 flex items-center gap-5 text-sm text-[#6b806d]"><div className="flex -space-x-2"><span className="flex size-9 items-center justify-center rounded-full border-2 border-[#f7f3ec] bg-[#d9b5a2] text-white"><User className="size-4.5" /></span><span className="flex size-9 items-center justify-center rounded-full border-2 border-[#f7f3ec] bg-[#9db5a1] text-white"><User className="size-4.5" /></span><span className="flex size-9 items-center justify-center rounded-full border-2 border-[#f7f3ec] bg-[#e5c69f] text-white"><Dog className="size-4.5" /></span></div><span>Mais tranquilidade para<br /><strong className="text-[#315447]">tutores e seus pets</strong></span></div>
           </motion.div>
           <motion.div initial={{ opacity: 0, scale: .94 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: .9, delay: .15 }} className="relative mx-auto w-full max-w-[510px]">
             <div className="relative aspect-[.88] overflow-hidden rounded-[48%_48%_24%_24%] bg-[#d6e0d2] shadow-[0_30px_70px_-35px_#173c32]">
@@ -58,7 +57,7 @@ export default function Page() {
 
       <div className="border-y border-[#173c32]/10 bg-[#e7eee3] px-6 py-5"><div className="mx-auto flex max-w-7xl flex-wrap justify-center gap-x-10 gap-y-3 text-center text-xs font-semibold uppercase tracking-[.16em] text-[#6b806d] sm:justify-between"><span>Brasil</span><span>Estados Unidos</span><span>Europa</span><span>América Latina</span><span>e muito mais</span></div></div>
 
-      <section id="como-funciona" className="px-6 py-28 lg:px-10 lg:py-36"><div className="mx-auto max-w-7xl"><motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: .25 }} variants={reveal} className="max-w-2xl"><p className="mb-4 text-sm font-bold uppercase tracking-[.22em] text-[#d27c61]">Viaje com segurança</p><h2 className="font-serif text-4xl leading-tight tracking-[-.035em] sm:text-6xl">Um processo complexo, <em className="font-normal text-[#d27c61]">feito simples.</em></h2><p className="mt-6 text-lg leading-relaxed text-[#587064]">O CVI é o documento oficial que comprova que seu animal está saudável e apto para viajar. A gente acompanha cada detalhe para você não precisar se preocupar.</p></motion.div>
+      <section id="como-funciona" className="px-6 py-28 lg:px-10 lg:py-36"><div className="mx-auto max-w-7xl"><motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: .25 }} variants={reveal} className="max-w-2xl"><p className="mb-4 text-sm font-bold uppercase tracking-[.22em] text-[#d27c61]">Viaje com segurança</p><h2 className="font-serif text-4xl leading-tight tracking-[-.035em] sm:text-6xl">Um processo complexo, <em className="font-normal text-[#d27c61]">feito de forma simples.</em></h2><p className="mt-6 text-lg leading-relaxed text-[#587064]">O CVI é o documento oficial que comprova que seu animal está saudável e apto para viajar. A gente acompanha cada detalhe para você não precisar se preocupar.</p></motion.div>
           <div className="mt-16 grid gap-5 md:grid-cols-3"><Step number="01" icon={<Stethoscope />} title="Analisamos" text="Entendemos seu destino, companhia aérea e o histórico do seu pet." /><Step number="02" icon={<ShieldCheck />} title="Organizamos" text="Orientamos exames, vacinas e todos os documentos necessários." /><Step number="03" icon={<Heart />} title="Acompanhamos" text="Damos suporte até o dia da viagem — inclusive durante o embarque." /></div>
         </div></section>
 
